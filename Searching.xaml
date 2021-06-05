@@ -242,8 +242,8 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150*"/>
-            <ColumnDefinition Width="1277*"/>
-            <ColumnDefinition Width="345*"/>
+            <ColumnDefinition Width="1278*"/>
+            <ColumnDefinition Width="346*"/>
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
         <TextBox x:Name="textbox_search" Style="{StaticResource TextBoxStyle1}" Grid.Row="2" Margin="8,0,8,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" PlaceholderText="搜索" Background="Transparent" Grid.Column="1" KeyDown="textbox_searcon_on_keydown"/>

@@ -247,36 +247,38 @@
             <RowDefinition Height="45*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="2*"/>
-            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="150*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="203*"/>
+            <ColumnDefinition Width="406*"/>
+            <ColumnDefinition Width="406*"/>
+            <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
-        <ComboBox x:Name="combobox_server_list" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="8,0,8,0" Grid.ColumnSpan="4" Background="Transparent" SelectionChanged="server_changed"/>
-        <TextBox x:Name="textbox_server_addr" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="服务器地址"/>
-        <TextBox x:Name="textbox_server_user" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="用户名"/>
-        <TextBox x:Name="textbox_server_pass" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="密码"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="新增" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="8,8,8,8" Click="button_server_add_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="删除" Grid.Column="1" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_del_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="保存" Grid.Column="2" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_save_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="使用" Grid.Column="3" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_use_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="更新列表" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_update_playlist_click"/>
-        <TextBlock x:Name="textblock_order" Grid.Column="4" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8,0,8,0"><Run Text="列表排序"/><Run Text="："/><Run Text="{}{}"/></TextBlock>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="默认" Grid.Column="4" Grid.Row="1" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_default_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="随机" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_random_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="标题 (升序)" Grid.Column="4" Grid.Row="2" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_title_asc_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="标题 (降序)" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_title_desc_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="艺术家 (升序)" Grid.Column="4" Grid.Row="3" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_artist_asc_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="艺术家 (降序)" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_artist_desc_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="专辑 (升序)" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_album_asc_click"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="专辑 (降序)" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_album_desc_click"/>
-        <TextBox x:Name="textbox_tracks_limit" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Grid.Column="4" Margin="8,0,8,0" Grid.Row="5" Text="" TextWrapping="Wrap" VerticalAlignment="Center" PlaceholderText="曲目显示限制" InputScope="Number"/>
-        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="保存曲目显示限制" Grid.Column="5" Margin="8,8,8,8" Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_track_limit_save_click"/>
-        <TextBlock x:Name="textblock_hint" Grid.Column="2" Grid.Row="7" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="3" TextAlignment="Center"/>
-        <TextBlock Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="8" Text="API提供：Beefweb Remote Panel (foo_beefweb)" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
-        <TextBlock x:Name="textblock_copyright" Grid.ColumnSpan="3" Grid.Column="2" HorizontalAlignment="Stretch" Grid.Row="9" Text="Copyright" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+        <ComboBox Grid.Column="1" x:Name="combobox_server_list" HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="8,0,8,0" Grid.ColumnSpan="4" Background="Transparent" SelectionChanged="server_changed"/>
+        <TextBox Grid.Column="1" x:Name="textbox_server_addr" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="1" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="服务器地址"/>
+        <TextBox Grid.Column="1" x:Name="textbox_server_user" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="2" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="用户名"/>
+        <TextBox Grid.Column="1" x:Name="textbox_server_pass" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Margin="8,0,8,0" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="4" PlaceholderText="密码"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="新增" Grid.Column="1" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="8,8,8,8" Click="button_server_add_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="删除" Grid.Column="2" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_del_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="保存" Grid.Column="3" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_save_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="使用" Grid.Column="4" Margin="8,8,8,8" Grid.Row="4" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_server_use_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="更新列表" Grid.Column="1" Grid.Row="5" Grid.ColumnSpan="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_update_playlist_click"/>
+        <TextBlock x:Name="textblock_order" Grid.Column="5" TextWrapping="Wrap" VerticalAlignment="Center" Margin="8,0,8,0"><Run Text="列表排序"/><Run Text="："/><Run Text="{}{}"/></TextBlock>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="默认" Grid.Column="5" Grid.Row="1" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_default_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="随机" Grid.Column="6" Grid.Row="1" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_random_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="标题 (升序)" Grid.Column="5" Grid.Row="2" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_title_asc_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="标题 (降序)" Grid.Column="6" Grid.Row="2" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_title_desc_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="艺术家 (升序)" Grid.Column="5" Grid.Row="3" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_artist_asc_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="艺术家 (降序)" Grid.Column="6" Grid.Row="3" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_artist_desc_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="专辑 (升序)" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_album_asc_click"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="专辑 (降序)" Grid.Column="6" Grid.Row="4" HorizontalAlignment="Stretch" Margin="8,8,8,8" VerticalAlignment="Stretch" Click="button_order_album_desc_click"/>
+        <TextBox x:Name="textbox_tracks_limit" Style="{StaticResource TextBoxStyle1}" Background="Transparent" Grid.Column="5" Margin="8,0,8,0" Grid.Row="5" Text="" TextWrapping="Wrap" VerticalAlignment="Center" PlaceholderText="曲目显示限制" InputScope="Number"/>
+        <Button FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Style="{StaticResource ButtonStyle1}" Content="保存曲目显示限制" Grid.Column="6" Margin="8,8,8,8" Grid.Row="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="button_track_limit_save_click"/>
+        <TextBlock x:Name="textblock_hint" Grid.Column="3" Grid.Row="7" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="3" TextAlignment="Center"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="8" Text="API提供：Beefweb Remote Panel (foo_beefweb)" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
+        <TextBlock x:Name="textblock_copyright" Grid.ColumnSpan="3" Grid.Column="3" HorizontalAlignment="Stretch" Grid.Row="9" Text="Copyright" TextWrapping="Wrap" VerticalAlignment="Center" TextAlignment="Center"/>
 
     </Grid>
 </Page>
