@@ -51,11 +51,6 @@ namespace FB2Kbeefwebcontroller_UWP
             this.InitializeComponent();
             this.ViewModel = new ListitemModel();
 
-            //for (int i = 1; i <= 5; i++)
-            //{
-            //    ViewModel.Listitems.Add(new Listitem() { title = "a"+i.ToString(), artist = "b" + i.ToString(), album = "c" + i.ToString(), id = "d" + i.ToString(), duration = "e" + i.ToString() });
-            //}
-
             refresh_search();
             if (G.Server_id != 0)
             {
@@ -67,6 +62,10 @@ namespace FB2Kbeefwebcontroller_UWP
 
         private async void listitem_selected(object sender, DoubleTappedRoutedEventArgs e)
         {
+            if (listview_playlist.SelectedItem == null)
+            {
+                return;
+            }
             Listitem item = (Listitem)listview_playlist.SelectedValue;
             string id = item.id;
             string title = item.title;
