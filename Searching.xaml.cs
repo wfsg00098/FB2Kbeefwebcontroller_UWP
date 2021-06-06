@@ -66,18 +66,26 @@ namespace FB2Kbeefwebcontroller_UWP
             {
                 return;
             }
-            Listitem item = (Listitem)listview_playlist.SelectedValue;
-            string id = item.id;
-            string title = item.title;
-            string artist = item.artist;
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/play/" + G.current_playlist + "/" + id;
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            show_hint("播放：" + title + " - " + artist, 2);
+            try
+            {
+                Listitem item = (Listitem)listview_playlist.SelectedValue;
+                string id = item.id;
+                string title = item.title;
+                string artist = item.artist;
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/play/" + G.current_playlist + "/" + id;
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                show_hint("播放：" + title + " - " + artist, 2);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+            }
+            
         }
 
         private void refresh_search()

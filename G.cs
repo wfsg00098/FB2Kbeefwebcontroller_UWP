@@ -23,8 +23,6 @@ namespace FB2Kbeefwebcontroller_UWP
         public static string db_name = "config.db";
         public static SQLiteConnection db;
 
-
-
         public static int Server_id;
         public static string Server_addr;
         public static string Server_user;
@@ -49,9 +47,8 @@ namespace FB2Kbeefwebcontroller_UWP
         }
         public static string get_auth_phrase()
         {
-            string result = "";
             string phrase = Server_user + ":" + Server_pass;
-            result = Convert.ToBase64String(Encoding.Default.GetBytes(phrase), Base64FormattingOptions.None);
+            string result = Convert.ToBase64String(Encoding.Default.GetBytes(phrase), Base64FormattingOptions.None);
             return result;
         }
 
@@ -358,7 +355,7 @@ namespace FB2Kbeefwebcontroller_UWP
             }
             catch(Exception ex)
             {
-                print(ex.StackTrace);
+                print(ex.HResult.ToString());
                 string sql = "delete from list_s" + Server_id.ToString();
                 ISQLiteStatement stat = db.Prepare(sql);
                 stat.Step();

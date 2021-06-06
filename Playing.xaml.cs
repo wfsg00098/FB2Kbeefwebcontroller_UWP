@@ -107,6 +107,7 @@ namespace FB2Kbeefwebcontroller_UWP
                 {
                     BitmapImage i = new BitmapImage(new Uri("ms-appx:Assets/default_album_art.jpg"));
                     img_album_art.Source = i;
+                    G.print(ex.HResult.ToString());
                 }
                 
                 
@@ -134,90 +135,144 @@ namespace FB2Kbeefwebcontroller_UWP
 
         private async void button_stop_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/stop";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            textblock_title.Text = "标题";
-            textblock_artist.Text = "艺术家";
-            textblock_album.Text = "专辑";
-            BitmapImage i = new BitmapImage(new Uri("ms-appx:Assets/default_album_art.jpg"));
-            img_album_art.Source = i;
-            show_hint("停止", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/stop";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                textblock_title.Text = "标题";
+                textblock_artist.Text = "艺术家";
+                textblock_album.Text = "专辑";
+                BitmapImage i = new BitmapImage(new Uri("ms-appx:Assets/default_album_art.jpg"));
+                img_album_art.Source = i;
+                show_hint("停止", 1);
+            }catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+                
+            
         }
 
         private async void button_play_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/play";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            Thread.Sleep(100);
-            refresh_playing(null, null);
-            show_hint("播放", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/play";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                Thread.Sleep(100);
+                refresh_playing(null, null);
+                show_hint("播放", 1);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+            
         }
 
         private async void button_pause_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/pause/toggle";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            Thread.Sleep(100);
-            refresh_playing(null, null);
-            show_hint("播放/暂停", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/pause/toggle";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                Thread.Sleep(100);
+                refresh_playing(null, null);
+                show_hint("播放/暂停", 1);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+            
         }
 
         private async void button_previous_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/previous";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            Thread.Sleep(100);
-            refresh_playing(null, null);
-            show_hint("上一曲", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/previous";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                Thread.Sleep(100);
+                refresh_playing(null, null);
+                show_hint("上一曲", 1);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+            
         }
 
         private async void button_next_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/next";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            Thread.Sleep(100);
-            refresh_playing(null, null);
-            show_hint("下一曲", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/next";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                Thread.Sleep(100);
+                refresh_playing(null, null);
+                show_hint("下一曲", 1);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+            
         }
 
         private async void button_replay_click(object sender, RoutedEventArgs e)
         {
-            HttpClient http = new HttpClient();
-            string url = G.Server_addr + "/api/player/stop";
-            var headers = http.DefaultRequestHeaders;
-            headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
-            HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
-            HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            url = G.Server_addr + "/api/player/play";
-            response = await http.PostAsync(new Uri(url), content);
-            response.EnsureSuccessStatusCode();
-            show_hint("重新播放", 1);
+            try
+            {
+                HttpClient http = new HttpClient();
+                string url = G.Server_addr + "/api/player/stop";
+                var headers = http.DefaultRequestHeaders;
+                headers.TryAdd("Authorization", "Basic " + G.get_auth_phrase());
+                HttpStringContent content = new HttpStringContent("{\"test\":123}", UnicodeEncoding.Utf8, "application/json");
+                HttpResponseMessage response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                url = G.Server_addr + "/api/player/play";
+                response = await http.PostAsync(new Uri(url), content);
+                response.EnsureSuccessStatusCode();
+                show_hint("重新播放", 1);
+            }
+            catch (Exception ex)
+            {
+                G.print(ex.HResult.ToString());
+                show_hint("无法连接到服务器", 1);
+            }
+            
         }
     }
 }
