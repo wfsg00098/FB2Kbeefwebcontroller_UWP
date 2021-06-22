@@ -180,5 +180,10 @@ namespace FB2Kbeefwebcontroller_UWP
                 button_search_click(null, null);
             }
         }
+
+        private void button_search_double_tapped(object sender, DoubleTappedRoutedEventArgs e)
+        {
+            textbox_search.Text = "";
+        }
     }
 }

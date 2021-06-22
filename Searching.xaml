@@ -276,7 +276,7 @@
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button x:Name="button_search" Content="搜索" Grid.Column="2" Margin="8,0,8,0" Grid.Row="2" HorizontalAlignment="Stretch" Click="button_search_click" RightTapped="button_search_right_click"/>
+        <Button x:Name="button_search" Content="搜索" Grid.Column="2" Margin="8,0,8,0" Grid.Row="2" HorizontalAlignment="Stretch" Click="button_search_click" RightTapped="button_search_right_click" DoubleTapped="button_search_double_tapped"/>
         <TextBlock x:Name="textblock_hint" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="8,0,8,0" TextAlignment="Center"/>
 
     </Grid>

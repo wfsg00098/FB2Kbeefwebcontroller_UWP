@@ -256,11 +256,18 @@ namespace FB2Kbeefwebcontroller_UWP
 
         private void button_track_limit_save_click(object sender, RoutedEventArgs e)
         {
-            int limit = Int32.Parse(textbox_tracks_limit.Text);
-            G.db_set_list_limit(limit);
-            G.tracks_limit = limit;
-            refresh_track_limit();
-            show_hint("已保存曲目显示限制", 2);
+            try
+            {
+                int limit = Int32.Parse(textbox_tracks_limit.Text);
+                G.db_set_list_limit(limit);
+                G.tracks_limit = limit;
+                refresh_track_limit();
+                show_hint("已保存曲目显示限制", 2);
+            } catch(Exception ex)
+            {
+                show_hint("曲目显示限制输入不正确", 2);
+            }
+            
         }
     }
 }
