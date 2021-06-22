@@ -10,7 +10,7 @@
   <Identity
     Name="b3f7edcb-b058-468d-924f-f755f721ac23"
     Publisher="CN=Badegg"
-    Version="1.0.8.0" />
+    Version="1.0.9.0" />
 
   <mp:PhoneIdentity PhoneProductId="b3f7edcb-b058-468d-924f-f755f721ac23" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 

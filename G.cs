@@ -336,6 +336,9 @@ namespace FB2Kbeefwebcontroller_UWP
                     JsonObject json2 = JsonObject.Parse(body);
                     json2 = json2.GetNamedObject("playlistItems");
                     JsonArray array2 = json2.GetNamedArray("items");
+                    stat = db.Prepare("begin");
+                    stat.Step();
+                    stat.Dispose();
                     for (int j = 0; j < itemcount; j++)
                     {
                         JsonObject column = array2.GetObjectAt((uint)j);
@@ -349,7 +352,11 @@ namespace FB2Kbeefwebcontroller_UWP
                             columns.GetStringAt(2),
                             columns.GetStringAt(3)
                             );
+                        
                     }
+                    stat = db.Prepare("commit");
+                    stat.Step();
+                    stat.Dispose();
                 }
                 return true;
             }
