@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
     <Page.Resources>
         <Style x:Key="ButtonStyle1" TargetType="Button">
             <Setter Property="Background" Value="{ThemeResource ButtonRevealBackground}"/>
@@ -89,12 +90,12 @@
             <RowDefinition Height="89*"/>
             <RowDefinition Height="46*"/>
         </Grid.RowDefinitions>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE71A;" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" BorderThickness="2,2,2,2" Click="button_stop_click"/>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_play_click"/>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE769;" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_pause_click"/>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_previous_click"/>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_next_click"/>
-        <Button Style="{StaticResource ButtonStyle1}" FontFamily="Segoe MDL2 Assets" Content="&#xE72C;" Grid.Column="6" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_replay_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE71A;" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" BorderThickness="2,2,2,2" Click="button_stop_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE768;" Grid.Column="2" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_play_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE769;" Grid.Column="3" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_pause_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE892;" Grid.Column="4" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_previous_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE893;" Grid.Column="5" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_next_click"/>
+        <Button Style="{StaticResource ButtonStyle1}" CornerRadius="8" FontFamily="Segoe MDL2 Assets" Content="&#xE72C;" Grid.Column="6" Grid.Row="4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="8,8,8,8" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" Click="button_replay_click"/>
         <Image x:Name="img_album_art" Grid.Column="3" Margin="16,60,16,16" Grid.ColumnSpan="2" Stretch="Uniform" Source="/Assets/default_album_art.jpg" />
         <TextBlock x:Name="textblock_title" TextWrapping="WrapWholeWords" TextTrimming="Clip" Grid.ColumnSpan="6" Grid.Column="1" Grid.Row="1" Text="标题" TextAlignment="Center"  Style="{StaticResource TitleTextBlockStyle}"/>
         <TextBlock x:Name="textblock_artist" TextWrapping="WrapWholeWords" TextTrimming="Clip" Grid.Column="1" Grid.Row="2" Text="艺术家" Grid.ColumnSpan="6" TextAlignment="Center" Style="{StaticResource BodyTextBlockStyle}" Height="78" VerticalAlignment="Top"/>

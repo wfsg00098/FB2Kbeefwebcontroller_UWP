@@ -6,7 +6,8 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    Background="{ThemeResource SystemControlAcrylicWindowBrush}">
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    muxc:BackdropMaterial.ApplyToRootOrPageBackground="True">
     <Page.Resources>
         <Style x:Key="TextBoxStyle1" TargetType="TextBox">
             <Setter Property="Foreground" Value="{ThemeResource TextControlForeground}"/>
@@ -246,9 +247,10 @@
             <ColumnDefinition Width="346*"/>
             <ColumnDefinition Width="150*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="textbox_search" Style="{StaticResource TextBoxStyle1}" Grid.Row="2" Margin="8,0,8,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" PlaceholderText="搜索" Background="Transparent" Grid.Column="1" KeyDown="textbox_searcon_on_keydown"/>
-        <ComboBox x:Name="combobox_playlist" Margin="8,0,8,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="32" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" SelectionChanged="playlist_selection_changed"/>
-        <ListView x:Name="listview_playlist" ItemsSource="{x:Bind ViewModel.Listitems}" Margin="8,0,8,0" DoubleTapped="listitem_selected" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch">
+
+        <TextBox x:Name="textbox_search" CornerRadius="8"  Style="{StaticResource TextBoxStyle1}" Grid.Row="2" Margin="8,0,8,0" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Height="32" PlaceholderText="搜索" Background="Transparent" Grid.Column="1" KeyDown="textbox_searcon_on_keydown"/>
+        <ComboBox x:Name="combobox_playlist" CornerRadius="8" Margin="8,0,8,0" HorizontalAlignment="Stretch" VerticalAlignment="Center" Height="32" Grid.Column="1" Grid.ColumnSpan="2" Background="Transparent" SelectionChanged="playlist_selection_changed"/>
+        <ListView x:Name="listview_playlist" CornerRadius="8" ItemsSource="{x:Bind ViewModel.Listitems}" Margin="8,0,8,0" DoubleTapped="listitem_selected" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" VerticalAlignment="Stretch">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:Listitem">
                     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -273,10 +275,11 @@
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     <Setter Property="Margin" Value="0,1,0,1"/>
+                    <Setter Property="CornerRadius" Value="8"/>
                 </Style>
             </ListView.ItemContainerStyle>
         </ListView>
-        <Button x:Name="button_search" Content="搜索" Grid.Column="2" Margin="8,0,8,0" Grid.Row="2" HorizontalAlignment="Stretch" Click="button_search_click" RightTapped="button_search_right_click" DoubleTapped="button_search_double_tapped"/>
+        <Button x:Name="button_search" Style="{StaticResource ButtonStyle1}" CornerRadius="8" Content="搜索" Grid.Column="2" Margin="8,0,8,0" Grid.Row="2" HorizontalAlignment="Stretch" Click="button_search_click" RightTapped="button_search_right_click" DoubleTapped="button_search_double_tapped" FocusVisualPrimaryBrush="#00000000" Background="#00000000" FocusVisualSecondaryBrush="#99FFFFFF" />
         <TextBlock x:Name="textblock_hint" Grid.Column="1" HorizontalAlignment="Stretch" Grid.Row="3" Text="" TextWrapping="Wrap" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="8,0,8,0" TextAlignment="Center"/>
 
     </Grid>
